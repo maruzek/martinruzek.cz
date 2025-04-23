@@ -11,6 +11,12 @@ importers:
       '@astrojs/react':
         specifier: ^4.2.4
         version: 4.2.4(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@fontsource-variable/epilogue':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource-variable/fraunces':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@types/react':
         specifier: ^19.1.2
         version: 19.1.2
@@ -20,6 +26,9 @@ importers:
       astro:
         specifier: ^5.7.2
         version: 5.7.2(rollup@4.40.0)(typescript@5.8.3)
+      astro-tooltips:
+        specifier: ^0.6.2
+        version: 0.6.2
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -294,6 +303,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@fontsource-variable/epilogue@5.2.5':
+    resolution: {integrity: sha512-dZpKyaZr2x5B2kZsvS1TTyNdfnEKd3BTZla+O35ykIZDgEO1LlIxppfDj7+WKRSu4glPPR6Z5ZZd7GXkWxO4fA==}
+
+  '@fontsource-variable/fraunces@5.2.5':
+    resolution: {integrity: sha512-fALBYzdKp2NXCSHT9F8akYQGUWCjoF0+nX/ksFjo/Qnz9RwYBYWdJxXIcvNalBoeTxa5g6b28gQDQzqzLbZW8A==}
+
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
@@ -419,6 +434,9 @@ packages:
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
+
+  '@popperjs/core@2.11.8':
+    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
   '@rollup/pluginutils@5.1.4':
     resolution: {integrity: sha512-USm05zrsFxYLPdWWq+K3STlWiT/3ELn3RcV5hJMghpeAIhxfsUIg6mt12CBJBInWMV4VneoV7SfGv8xIwo2qNQ==}
@@ -636,6 +654,9 @@ packages:
 
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
+
+  astro-tooltips@0.6.2:
+    resolution: {integrity: sha512-I9uXbchctnRqbc0mnxKcBRfweMuql/U+619+MzNvq3kANc7xthOXj6cMNgAkTaXoHJLdFMKL3Fx6vB5cyiiRXg==}
 
   astro@5.7.2:
     resolution: {integrity: sha512-h/+MjrirU2xT+khkxvwPxE7c1O4nxzVtuSnGIqx+3dtrmUoxJvnNeIBnO7ED0mWzo6ClZ4aVBQj63M7U47anLg==}
@@ -1383,6 +1404,9 @@ packages:
     resolution: {integrity: sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww==}
     engines: {node: '>=12.0.0'}
 
+  tippy.js@6.3.7:
+    resolution: {integrity: sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==}
+
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
 
@@ -1918,6 +1942,10 @@ snapshots:
   '@esbuild/win32-x64@0.25.2':
     optional: true
 
+  '@fontsource-variable/epilogue@5.2.5': {}
+
+  '@fontsource-variable/fraunces@5.2.5': {}
+
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
       '@img/sharp-libvips-darwin-arm64': 1.0.4
@@ -2011,6 +2039,8 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
 
   '@oslojs/encoding@1.1.0': {}
+
+  '@popperjs/core@2.11.8': {}
 
   '@rollup/pluginutils@5.1.4(rollup@4.40.0)':
     dependencies:
@@ -2203,6 +2233,10 @@ snapshots:
   aria-query@5.3.2: {}
 
   array-iterate@2.0.1: {}
+
+  astro-tooltips@0.6.2:
+    dependencies:
+      tippy.js: 6.3.7
 
   astro@5.7.2(rollup@4.40.0)(typescript@5.8.3):
     dependencies:
@@ -3326,6 +3360,10 @@ snapshots:
     dependencies:
       fdir: 6.4.3(picomatch@4.0.2)
       picomatch: 4.0.2
+
+  tippy.js@6.3.7:
+    dependencies:
+      '@popperjs/core': 2.11.8
 
   tr46@0.0.3: {}
 

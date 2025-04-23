@@ -1,17 +1,22 @@
+---
+import "@fontsource-variable/fraunces";
+import "@fontsource-variable/epilogue";
+import { Tooltips } from "astro-tooltips";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <script
+      src="https://kit.fontawesome.com/868ac28d90.js"
+      crossorigin="anonymous"></script>
+
+    <Tooltips interactive={false} delay={[15, 200]} />
 
     <title>Martin Růžek</title>
   </head>
@@ -20,13 +25,136 @@
   </body>
 </html>
 
-<style>
-  html {
-    font-family: "Fraunces", serif;
-  }
+<style is:global>
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  /* body {
+    font-family: "Epilogue Variable", sans-serif;
+    font-size: 20px;
+    color: #202020;
+  }
+  p {
+    font-size: 20px;
+  }
+  small {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 76.29px;
+    font-family: "Fraunces Variable", serif;
+  }
+  h2 {
+    font-size: 61.04px;
+    font-family: "Fraunces Variable", serif;
+  }
+  h3 {
+    font-size: 48.83px;
+    font-family: "Fraunces Variable", serif;
+  }
+  h4 {
+    font-size: 39.06px;
+    font-family: "Fraunces Variable", serif;
+  }
+  h5 {
+    font-size: 31.25px;
+    font-family: "Fraunces Variable", serif;
+  }
+  h6 {
+    font-size: 25px;
+    font-family: "Fraunces Variable", serif;
+  } */
+
+  body {
+    font-family: "Epilogue Variable", sans-serif;
+    font-size: 20px;
+    color: #202020;
+  }
+  p {
+    font-size: 20px;
+  }
+  small {
+    font-size: 16.67px;
+  }
+  h1 {
+    font-size: 59.72px;
+    font-family: "Fraunces Variable", serif;
+  }
+  h2 {
+    font-size: 49.77px;
+    font-family: "Fraunces Variable", serif;
+  }
+  h3 {
+    font-size: 41.47px;
+    font-family: "Fraunces Variable", serif;
+  }
+  h4 {
+    font-size: 34.56px;
+    font-family: "Fraunces Variable", serif;
+  }
+  h5 {
+    font-size: 28.8px;
+    font-family: "Fraunces Variable", serif;
+  }
+  h6 {
+    font-size: 24px;
+    font-family: "Fraunces Variable", serif;
+  }
+
+  /* body {
+    font-family: "Epilogue Variable", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #202020;
+  }
+  h1 {
+    font-family: "Fraunces Variable", serif;
+    font-size: 53.75px;
+    font-weight: 600;
+  }
+  p {
+    font-family: "Epilogue Variable", sans-serif;
+  }
+  small {
+    font-family: "Epilogue Variable", sans-serif;
+    font-size: 15px;
+  }
+  h2 {
+    font-size: 44.79px;
+    font-family: "Fraunces Variable", serif;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 37.32px;
+    font-family: "Fraunces Variable", serif;
+    font-weight: 500;
+  }
+  h4 {
+    font-size: 31.1px;
+    font-family: "Fraunces Variable", serif;
+    font-weight: 400;
+  }
+  h5 {
+    font-size: 25.92px;
+    font-family: "Fraunces Variable", serif;
+  }
+  h6 {
+    font-size: 21.6px;
+    font-family: "Fraunces Variable", serif;
+  } */
+  strong {
+    font-weight: 700;
+  }
+
+  .big-p {
+    font-size: 34.56px;
+    font-family: "Epilogue Variable", sans-serif;
+  }
+
+  .tippy-box[data-theme="default"] {
+    font-size: 14px;
   }
 </style>

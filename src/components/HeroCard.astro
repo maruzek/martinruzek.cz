@@ -1,0 +1,117 @@
+---
+import { Tooltips } from "astro-tooltips";
+---
+
+<!-- <header>
+    <div class="logo"><h3>Martin</h3></div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header> -->
+<div id="hero">
+  <!-- <div class="img-container"></div>
+  <div class="hero-content">
+    <img src="./test-sq.jpg" alt="" id="hero-portrait" />
+    <h1>test</h1>
+    <div id="links"></div>
+  </div> -->
+  <div class="hero-card">
+    <img src="./test-sq.jpg" alt="" id="hero-portrait" />
+
+    <h3>Martin Růžek</h3>
+    <p>Student, software&nbsp;engineer, web&nbsp;dev</p>
+    <div class="hero-links">
+      <i
+        class="fa-brands fa-square-github"
+        title="GitHub"
+        data-tooltip-placement="bottom"></i>
+      <i
+        class="fa-solid fa-square-envelope"
+        title="Zkopírovat email do schránky"
+        data-tooltip-placement="bottom"
+        id="email-clipboard"></i>
+      <i
+        class="fa-brands fa-linkedin"
+        title="LinkedIn"
+        data-tooltip-placement="bottom"></i>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-card {
+    width: 70%;
+    padding: 0 2rem;
+  }
+  #hero-portrait {
+    width: 100%;
+    height: auto;
+    margin-bottom: 18px;
+    border-radius: 5px 5px 50% 5px;
+  }
+
+  #hero-logo {
+    width: 50%;
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    z-index: 999;
+    transform: translate(-10%);
+  }
+
+  .hero-card p {
+    margin-top: 5px;
+  }
+
+  .hero-links {
+    font-size: 2.3rem;
+    margin-right: 1rem;
+    margin-top: 5px;
+  }
+
+  .hero-links i {
+    margin-right: 0.5rem;
+  }
+
+  #hero {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100vh;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+  }
+</style>
+
+<!-- TODO: doplnit potvrzeni zkopirovani do schranky -->
+
+<script>
+  const emailEl = document.getElementById("email-clipboard");
+  const email = "me@martinruzek.cz";
+
+  if (emailEl) {
+    emailEl.addEventListener("click", () => {
+      navigator.clipboard.writeText(email).then(() => {
+        emailEl.setAttribute("title", "Zkopírováno!");
+        setTimeout(() => {
+          emailEl.setAttribute("title", "Zkopírovat email do schránky");
+        }, 2000);
+      });
+    });
+  }
+</script>

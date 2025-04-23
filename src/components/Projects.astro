@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<section>
+  <div class="section-overview">
+    <h2>Mé projekty</h2>
+    <p>
+      Zde je seznam projektů, na kterých jsem pracoval. Můžete si prohlédnout
+      jejich zdrojový kód a vyzkoušet si je.
+    </p>
+  </div>
+
+  {
+    projects.map((p) => (
+      <article>
+        <h3>{p.data.title}</h3>
+      </article>
+    ))
+  }
+</section>
+
+<style>
+  .section-overview {
+    margin-top: 1rem;
+  }
+
+  .section-overview p {
+    margin: 1rem 0;
+  }
+</style>

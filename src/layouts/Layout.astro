@@ -2,6 +2,7 @@
 import "@fontsource-variable/fraunces";
 import "@fontsource-variable/epilogue";
 import { Tooltips } from "astro-tooltips";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -17,6 +18,7 @@ import { Tooltips } from "astro-tooltips";
       crossorigin="anonymous"></script>
 
     <Tooltips interactive={false} delay={[15, 200]} />
+    <ClientRouter />
 
     <title>Martin Růžek</title>
   </head>

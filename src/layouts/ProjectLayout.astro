@@ -1,0 +1,177 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+import { Picture, Image } from "astro:assets";
+// import heroImg from "../assets/buldok-admindash.png";
+import { ArrowLeft } from "@lucide/astro";
+
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faSquareGithub } from "@fortawesome/free-brands-svg-icons";
+
+library.add(faSquareGithub);
+
+const githubIcon = icon(faSquareGithub);
+---
+
+<Layout>
+  <header>
+    <a href="/"><ArrowLeft /> Zpět na úvodní stranu</a>
+  </header>
+  <main>
+    <h1>{frontmatter.title}</h1>
+    <p>{frontmatter.description}</p>
+    <div class="tags">
+      {frontmatter.tags.map((tag: string) => <p class="tag">{tag}</p>)}
+    </div>
+    <a href={frontmatter.link} class="repo-link" target="_blank">
+      <div>
+        <Fragment set:html={githubIcon.html} />
+      </div>
+      <span>GitHub</span>
+    </a>
+    <Image
+      src={frontmatter.image}
+      alt={frontmatter.title}
+      alt=`Screenshot aplikace ${frontmatter.title}`
+    />
+    <div class="content-container">
+      <slot />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  header {
+    width: 60%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+
+  main {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main h1 {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+    align-self: flex-start;
+  }
+
+  .tag {
+    background-color: #260e00;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .repo-link {
+    background-color: rgb(38, 14, 0, 0.2);
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    color: #260e00;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1;
+  }
+
+  .repo-link:hover {
+    background-color: rgb(38, 14, 0, 0.4);
+  }
+
+  .repo-link span {
+    line-height: normal;
+    height: 100%;
+  }
+
+  .content-container {
+    width: 100%;
+  }
+
+  .content-container :global(h2) {
+    margin: 1rem 0;
+  }
+
+  .content-container :global(p) {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .content-container :global(p > img),
+  .content-container :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    box-shadow: 1px 5px 29px 3px rgba(0, 0, 0, 0.49);
+    -webkit-box-shadow: 1px 5px 29px 3px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: 1px 5px 29px 3px rgba(0, 0, 0, 0.49);
+  }
+
+  .content-container :global(ul),
+  .content-container :global(ol) {
+    list-style-type: none;
+    margin: 1.25rem 0;
+  }
+
+  .content-container :global(li) {
+    position: relative;
+    padding-left: 1.75em; /* Make space for the custom icon */
+    margin-bottom: 0.65em; /* Spacing between list items */
+  }
+
+  .content-container :global(li::before) {
+    content: ""; /* Required for pseudo-elements with background/mask */
+    display: inline-block;
+    width: 0.9em; /* Adjust size of icon */
+    height: 0.9em; /* Adjust size of icon */
+    background-color: currentColor; /* Icon inherits text color, or set a specific color */
+
+    /* Lucide Chevron Right SVG as a mask */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    position: absolute;
+    left: 0.25em; /* Position icon to the left */
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    box-shadow: 1px 5px 29px 3px rgba(0, 0, 0, 0.49);
+    -webkit-box-shadow: 1px 5px 29px 3px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: 1px 5px 29px 3px rgba(0, 0, 0, 0.49);
+  }
+
+  .repo-link :global(svg.svg-inline--fa) {
+    width: 30px;
+    height: 30px;
+  }
+</style>

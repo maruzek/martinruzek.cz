@@ -1,5 +1,14 @@
 ---
 import { Tooltips } from "astro-tooltips";
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faSquareEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faSquareGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
+library.add(faSquareGithub, faSquareEnvelope, faLinkedin);
+
+const githubIcon = icon(faSquareGithub);
+const linkedinIcon = icon(faLinkedin);
+const squareEnvelope = icon(faSquareEnvelope);
 ---
 
 <!-- <header>
@@ -25,26 +34,39 @@ import { Tooltips } from "astro-tooltips";
     <h3>Martin Růžek</h3>
     <p>Student, software&nbsp;engineer, web&nbsp;dev</p>
     <div class="hero-links">
-      <i
+      <!-- <i
         class="fa-brands fa-square-github"
         title="GitHub"
         data-tooltip-placement="bottom"></i>
-      <i
+       <i
         class="fa-solid fa-square-envelope"
         title="Zkopírovat email do schránky"
         data-tooltip-placement="bottom"
-        id="email-clipboard"></i>
+        id="email-clipboard"></i> 
       <i
         class="fa-brands fa-linkedin"
         title="LinkedIn"
-        data-tooltip-placement="bottom"></i>
+        data-tooltip-placement="bottom"></i> -->
+      <a href="https://github.com/maruzek" target="_blank">
+        <Fragment set:html={githubIcon.html} />
+      </a>
+      <div
+        title="Zkopírovat email do schránky"
+        data-tooltip-placement="bottom"
+        id="email-clipboard"
+      >
+        <Fragment set:html={squareEnvelope.html} />
+      </div>
+      <a href="https://linkedin.com/in/maruzek" target="_blank">
+        <Fragment set:html={linkedinIcon.html} />
+      </a>
     </div>
   </div>
 </div>
 
 <style>
   .hero-card {
-    width: 70%;
+    width: 80%;
     padding: 0 2rem;
   }
   #hero-portrait {
@@ -54,34 +76,37 @@ import { Tooltips } from "astro-tooltips";
     border-radius: 5px 5px 50% 5px;
   }
 
-  #hero-logo {
-    width: 50%;
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    z-index: 999;
-    transform: translate(-10%);
-  }
-
   .hero-card p {
     margin-top: 5px;
   }
 
   .hero-links {
     font-size: 2.3rem;
-    margin-right: 1rem;
     margin-top: 5px;
+    display: flex;
   }
 
-  .hero-links i {
+  .hero-links a,
+  .hero-links div {
     margin-right: 0.5rem;
+    color: inherit;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .hero-links a:hover {
+    color: #551f00;
+  }
+
+  .svg-inline--fa {
+    width: 2.3rem;
+    height: 2.3rem;
   }
 
   #hero {
     position: sticky;
     top: 0;
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: center;
     width: 50%;
@@ -95,6 +120,13 @@ import { Tooltips } from "astro-tooltips";
     width: 100%;
     height: 100%;
     padding: 0 24px;
+  }
+</style>
+
+<style is:global>
+  .svg-inline--fa {
+    width: 2.4rem;
+    height: 2.4rem;
   }
 </style>
 

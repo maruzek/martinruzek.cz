@@ -6,11 +6,11 @@ import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="cs">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
     <script
@@ -23,15 +23,44 @@ import { ClientRouter } from "astro:transitions";
     <title>Martin Růžek</title>
   </head>
   <body>
+    <div id="background"></div>
     <slot />
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2025 Martin Růžek. Všechna práva vyhrazena.
+          <br />
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
 
 <style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  #background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -999;
+    width: 100%;
+    height: 100%;
+
+    background: #faf8ee;
+    background: linear-gradient(
+      145deg,
+      rgba(250, 248, 238, 1) 20%,
+      rgb(230, 230, 184) 100%
+    );
   }
 
   /* body {
@@ -73,10 +102,11 @@ import { ClientRouter } from "astro:transitions";
   body {
     font-family: "Epilogue Variable", sans-serif;
     font-size: 20px;
-    color: #202020;
+    color: #260e00;
   }
   p {
     font-size: 20px;
+    line-height: 1.5;
   }
   small {
     font-size: 16.67px;
@@ -105,48 +135,6 @@ import { ClientRouter } from "astro:transitions";
     font-size: 24px;
     font-family: "Fraunces Variable", serif;
   }
-
-  /* body {
-    font-family: "Epilogue Variable", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    color: #202020;
-  }
-  h1 {
-    font-family: "Fraunces Variable", serif;
-    font-size: 53.75px;
-    font-weight: 600;
-  }
-  p {
-    font-family: "Epilogue Variable", sans-serif;
-  }
-  small {
-    font-family: "Epilogue Variable", sans-serif;
-    font-size: 15px;
-  }
-  h2 {
-    font-size: 44.79px;
-    font-family: "Fraunces Variable", serif;
-    font-weight: 600;
-  }
-  h3 {
-    font-size: 37.32px;
-    font-family: "Fraunces Variable", serif;
-    font-weight: 500;
-  }
-  h4 {
-    font-size: 31.1px;
-    font-family: "Fraunces Variable", serif;
-    font-weight: 400;
-  }
-  h5 {
-    font-size: 25.92px;
-    font-family: "Fraunces Variable", serif;
-  }
-  h6 {
-    font-size: 21.6px;
-    font-family: "Fraunces Variable", serif;
-  } */
   strong {
     font-weight: 700;
   }
@@ -158,5 +146,44 @@ import { ClientRouter } from "astro:transitions";
 
   .tippy-box[data-theme="default"] {
     font-size: 14px;
+  }
+
+  footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul,
+  ol {
+    list-style-type: none;
+    margin: 1.25rem 0;
+  }
+
+  li {
+    position: relative;
+    padding-left: 1.75em; /* Make space for the custom icon */
+    margin-bottom: 0.65em; /* Spacing between list items */
+  }
+
+  li::before {
+    content: ""; /* Required for pseudo-elements with background/mask */
+    display: inline-block;
+    width: 0.9em; /* Adjust size of icon */
+    height: 0.9em; /* Adjust size of icon */
+    background-color: currentColor; /* Icon inherits text color, or set a specific color */
+
+    /* Lucide Chevron Right SVG as a mask */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    position: absolute;
+    left: 0.25em; /* Position icon to the left */
   }
 </style>

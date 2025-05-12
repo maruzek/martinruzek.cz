@@ -1,0 +1,226 @@
+---
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import {
+  faGithub,
+  faJs,
+  faReact,
+  faPhp,
+  faSymfony,
+  faDocker,
+  faGit,
+  faGitlab,
+  faFigma,
+} from "@fortawesome/free-brands-svg-icons";
+
+library.add(
+  faGithub,
+  faJs,
+  faReact,
+  faPhp,
+  faSymfony,
+  faDocker,
+  faGit,
+  faGitlab,
+  faFigma
+);
+
+const githubIcon = icon(faGithub);
+const jsIcon = icon(faJs);
+const reactIcon = icon(faReact);
+const phpIcon = icon(faPhp);
+const symfonyIcon = icon(faSymfony);
+const dockerIcon = icon(faDocker);
+const gitIcon = icon(faGit);
+const gitlabIcon = icon(faGitlab);
+const figmaIcon = icon(faFigma);
+
+import twLogo from "../assets/tailwind-css.svg";
+import Image from "astro/components/Image.astro";
+---
+
+<section id="stack">
+  <h2>Co umím</h2>
+  <h4>Technologie</h4>
+  <div class="stack-icons">
+    <!-- <div class="stack-item"></div> -->
+    <div class="stack-item">
+      <!-- <i class="fa-brands fa-react"></i> -->
+      <Fragment set:html={reactIcon.html} />
+      <small>React</small>
+    </div>
+    <div class="stack-item">
+      <Fragment set:html={jsIcon.html} />
+      <small>JavaScript</small>
+    </div>
+    <div class="stack-item">
+      <img src="./ts.svg" alt="" />
+      <small>TypeScript</small>
+    </div>
+    <div class="stack-item">
+      <Fragment set:html={phpIcon.html} />
+      <small>PHP</small>
+    </div>
+    <div class="stack-item">
+      <Fragment set:html={symfonyIcon.html} />
+      <small>Symfony</small>
+    </div>
+
+    <div class="stack-item">
+      <Fragment set:html={dockerIcon.html} />
+      <small>Docker</small>
+    </div>
+
+    <div class="stack-item">
+      <Fragment set:html={gitIcon.html} />
+      <small>Git</small>
+    </div>
+
+    <div class="stack-item">
+      <Fragment set:html={githubIcon.html} />
+      <small>GitHub</small>
+    </div>
+
+    <div class="stack-item">
+      <Fragment set:html={gitlabIcon.html} />
+      <small>GitLab</small>
+    </div>
+
+    <div class="stack-item">
+      <Image src={twLogo} alt="Tailwind CSS" />
+      <small>Tailwind</small>
+    </div>
+    <div class="stack-item">
+      <Fragment set:html={figmaIcon.html} />
+      <small>Figma</small>
+    </div>
+  </div>
+  <h4>Jazyky</h4>
+  <div class="languages">
+    <div class="lang-item">
+      <p>Čeština</p>
+      <small>Rodný jazyk</small>
+    </div>
+    <div class="lang-item">
+      <p>Angličtina</p>
+      <small>B2/C1</small>
+    </div>
+    <div class="lang-item">
+      <p>Němčina</p>
+      <small>Základní znalosti</small>
+    </div>
+  </div>
+
+  <h4>Další schopnosti</h4>
+  <div class="other-skills">
+    <ul>
+      <li>
+        <strong>AI:</strong> Nebojím se a umím používat umělou inteligenci pro zefektivnění
+        mé práce
+      </li>
+      <li>
+        <strong>Manažerské dovednosti:</strong> Dlouhodobě jsem byl ve vedení spolku
+        majícího 200 členů, kde jsem se naučil vést tým a organizovat činnost spolku.
+        Půl roku jsem dokonce zastával nejvyšší funkci předsedy.
+      </li>
+      <li>
+        <strong>Grafika:</strong> Umím pracovat s Adobe Photoshop, Canvou, Figmou
+        a dalšími nástroji
+      </li>
+      <li>
+        <strong>Fotografie:</strong> jsem amaterský fotograf, fotím na Canon EOS
+        80D a analogový fotoaparát
+      </li>
+      <li>
+        <strong>MS Office:</strong> Umím pracovat s MS Office, Google Workspace a
+        dalšími kancelářskými nástroji. Jsem držitelem certifikátu ECDL
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  #stack {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .stack-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1rem 0 2rem 0;
+  }
+  .stack-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background: #260e00;
+    border-radius: 5px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    color: white;
+    /* font-size: 2.5em; */
+    padding: 15px;
+    text-align: center;
+  }
+
+  .stack-item:hover {
+    transform: scale(1.05);
+  }
+
+  .stack-item img {
+    width: 68%;
+    filter: brightness(0) invert(1);
+  }
+  .stack-item small {
+    margin-top: 8px;
+    color: white;
+  }
+
+  .stack-item :global(svg.svg-inline--fa) {
+    width: 100px;
+    height: 100px;
+    color: white;
+  }
+
+  .languages {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1rem 0 2rem 0;
+  }
+  .lang-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(200px + 1rem);
+    height: 100px;
+    background: #260e00;
+    border-radius: 5px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    color: white;
+    /* font-size: 2.5em; */
+    padding: 15px;
+    text-align: center;
+  }
+
+  .lang-item p {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+</style>

@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+
+import spsoLogo from "../assets/spso.png";
+---
+
+<section>
+  <h2>Vzdělání</h2>
+
+  <article>
+    <Image
+      src="https://pr.vse.cz/wp-content/uploads/page/58/VSE_logo_CZ_circle_black.png"
+      alt="Logo VŠE"
+      width={100}
+      height={100}
+      loading="lazy"
+    />
+    <div class="edu-content">
+      <h4>Vysoká škola ekonomická v Praze</h4>
+      <strong>Faktulta informatiky a statistiky</strong>
+      <strong>2022-nyní</strong>
+      <p>
+        V současné době studuji na Vysoké škole ekonomické v Praze, obor
+        aplikovaná informatika. Tento obor mě zajímá, protože kombinuje
+        technické znalosti s ekonomickými dovednostmi, což je pro mě ideální.
+      </p>
+      <p>
+        <strong>Obor:</strong> Aplikovaná informatika
+      </p>
+      <p>
+        <strong>Stupeň studia:</strong> Bakalářský
+      </p>
+    </div>
+  </article>
+
+  <article>
+    <Image
+      src={spsoLogo}
+      alt="Logo SPŠO"
+      width={100}
+      height={100}
+      loading="lazy"
+    />
+    <div class="edu-content">
+      <h4>Střední průmyslová škola Ostrov</h4>
+      <strong>2017-2021</strong>
+      <p>
+        Vysněná škola, na kterou jsem chtěl jít už od páté třídy. Právě zde jsem
+        popré přičichnul k webovému vývoji a programování obecně.
+      </p>
+      <p>
+        <strong>Obor:</strong> Informační technologie
+      </p>
+      <p>
+        <strong>Stupeň studia:</strong> Středoškolské vzdělání
+      </p>
+    </div>
+  </article>
+</section>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 2rem 0;
+    background-color: rgb(250, 248, 238, 0.5);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .edu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+</style>

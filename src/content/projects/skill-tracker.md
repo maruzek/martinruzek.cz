@@ -11,10 +11,10 @@ order: 4
 
 Velmi jednoduchá aplikace vytvořená v plain JavaScriptu, která vznikla jako druhá semestrální práce v předmětu Webové technologie na přelomu roku 2023 a 2024. Vytvoření této aplikace jsem vzal jako příležitost si po dlouhé době vytvořit takovou jednoduchou aplikaci v čistém JS.
 
-Jejím účelem je dát uživateli možnost sledovat svůj pokrok v učení se jím stanovených schopnostech. Má na nýběr z několika možností, jak své skilly trackovat:
+Jejím účelem je dát uživateli možnost sledovat svůj pokrok v učení se jím stanovených schopnostech. Má na výběr z několika možností, jak své skilly trackovat:
 
 1. Zaznamenávání procent
-2. Zaznamenávání přečtechný stran
+2. Zaznamenávání přečtených stran
 3. Zaznamenávání uběhlého času stráveného učením se
 
 ![Zaznamenání učení](../../assets/skilltracker-tracking.png)

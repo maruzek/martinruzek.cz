@@ -24,7 +24,7 @@ Cílem bylo vytvořit jednoduchý webový nástroj, který by umožnil:
 
 ## Budoucnost
 
-Momentálně projekt prošel prvním testováním a vše zatím naznačuje tomu, že se aplikace od příští sezóny bude používat na všechn zápasech Buldoků. Před plným nasazením od srpna se bude muset doladit několik maličkostí, ale jako koncept aplikace uspěla a byla uvítána jako pozitivní vylepšení fungování klubu.
+Momentálně projekt prošel prvním testováním a vše zatím naznačuje tomu, že se aplikace od příští sezóny bude používat na všech zápasech Buldoků. Před plným nasazením od srpna se bude muset doladit několik maličkostí, ale jako koncept aplikace uspěla a byla uvítána jako pozitivní vylepšení fungování klubu.
 
 ## Technologie
 

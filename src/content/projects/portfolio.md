@@ -17,9 +17,9 @@ Pro realizaci jsem se rozhodl využít moderní webový framework Astro, do kter
 
 Hlavním cílem bylo vytvořit čistou, responzivní a snadno navigovatelnou webovou stránku, která by efektivně umožnila:
 
-- Prezentovat mé dokončené softwarové projekty s detailním popisem, použitými technologiemi a odkazy.
-- Přehledně zobrazit nejen mé technické dovednosti a znalosti
-- Poskytnout snadno dostupné kontaktní informace a odkazy na mé profily
+- prezentovat mé dokončené softwarové projekty s detailním popisem, použitými technologiemi a odkazy,
+- přehledně zobrazit nejen mé technické dovednosti a znalosti,
+- poskytnout snadno dostupné kontaktní informace a odkazy na mé profily
 
 ## Budoucnost
 
@@ -27,7 +27,7 @@ Toto portfolio je živým projektem. Plánuji jej pravidelně aktualizovat o nov
 
 ## Technologie
 
-Celé portfolio je postaveno na frameworku Astro. Ten byl zvolen díky své funkcionalitě vytvářet rychlé statické weby. A zejména jsem si chtěl vyzkoušet nový framework, kterým se mi tolik líbí.
+Celé portfolio je postaveno na frameworku Astro. Ten byl zvolen díky své funkcionalitě vytvářet rychlé statické weby. A zejména jsem si chtěl vyzkoušet nový framework, který se mi tolik líbí.
 
 Struktura stránek je definována pomocí sémantického HTML5. Vzhled a responzivita jsou řešeny pomocí CSS3, s využitím moderních technik jako Flexbox a CSS Grid. Logika pro dynamičtější části nebo specifické komponenty je psána v TypeScriptu a JavaScriptu. Obsah projektů je spravován pomocí Markdown souborů, což usnadňuje jejich aktualizaci.
 

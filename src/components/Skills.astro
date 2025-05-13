@@ -37,6 +37,7 @@ const gitlabIcon = icon(faGitlab);
 const figmaIcon = icon(faFigma);
 const linuxIcon = icon(faLinux);
 
+import tslogo from "../assets/ts.svg";
 import twLogo from "../assets/tailwind-css.svg";
 import Image from "astro/components/Image.astro";
 import astroLogo from "../assets/astro-square.svg";
@@ -57,7 +58,7 @@ import astroLogo from "../assets/astro-square.svg";
       <small>JavaScript</small>
     </div>
     <div class="stack-item">
-      <img src="./ts.svg" alt="" />
+      <Image src={tslogo} alt="TypeScript logo" />
       <small>TypeScript</small>
     </div>
     <div class="stack-item">
@@ -136,7 +137,7 @@ import astroLogo from "../assets/astro-square.svg";
         Půl roku jsem dokonce zastával nejvyšší funkci předsedy.
       </li>
       <li>
-        <strong>Project management:</strong> Mám zkušenosti s používa ním nástrojů
+        <strong>Project management:</strong> Mám zkušenosti s používáním nástrojů
         jako Trello, Notion a Jira pro organizaci projektů a úkolů
       </li>
       <li>
@@ -144,7 +145,7 @@ import astroLogo from "../assets/astro-square.svg";
         a dalšími nástroji
       </li>
       <li>
-        <strong>Fotografie:</strong> jsem amaterský fotograf, fotím na Canon EOS
+        <strong>Fotografie:</strong> jsem amatérský fotograf, fotím na Canon EOS
         80D a analogový fotoaparát
       </li>
       <li>

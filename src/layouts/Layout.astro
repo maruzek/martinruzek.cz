@@ -5,6 +5,11 @@ import { Tooltips } from "astro-tooltips";
 import { ClientRouter } from "astro:transitions";
 
 import Footer from "../components/Footer.astro";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const siteTitle = "Martin Růžek - Portfolio";
+const siteDescription = "Portfolio webového vývojáře a studenta Martina Růžka";
+const siteImage = new URL("./thumbnail.jpg", Astro.site).href;
 ---
 
 <!doctype html>
@@ -15,6 +20,50 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" type="image/ico" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
+    <title>{siteTitle}</title>
+    <meta name="title" content={siteTitle} />
+    <meta name="description" content={siteDescription} />
+
+    {/* SEO & Indexing */}
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow" />
+    {/* Allows search engines to index and follow links */}
+    <meta name="author" content="Martin Růžek" />
+    {/* Keywords are less important for SEO now, but can be included */}
+    <meta
+      name="keywords"
+      content="Martin Růžek, portfolio, webový vývojář, student, Astro, JavaScript, PHP, Symfony, React"
+    />
+
+    {/* Theme Color for browsers */}
+    <meta name="theme-color" content="#faf8ee" />
+    {/* Match your background or primary theme color */}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content={Astro.site
+        ? Astro.site.toString().slice(0, -1) + Astro.url.pathname
+        : canonicalURL}
+    />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:image" content={siteImage} />
+    <meta property="og:site_name" content="Martin Růžek" />
+    <meta property="og:locale" content="cs_CZ" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content={Astro.site
+        ? Astro.site.toString().slice(0, -1) + Astro.url.pathname
+        : canonicalURL}
+    />
+    <meta property="twitter:title" content={siteTitle} />
+    <meta property="twitter:description" content={siteDescription} />
+    <meta property="twitter:image" content={siteImage} />
     <Tooltips interactive={false} delay={[15, 200]} />
     <ClientRouter />
 

@@ -5,7 +5,8 @@
   </p>
   <div class="cta">
     <a href="#about" class="btn">Zjistit více</a>
-    <a href="../assets/ruzek-cv.pdf" class="btn" download>Stáhnout CV</a>
+    <a href="../assets/ruzek-cv.pdf" class="btn-outline" download>Stáhnout CV</a
+    >
   </div>
 </section>
 
@@ -27,10 +28,35 @@
 
   .cta .btn {
     padding: 0.5rem 1rem;
-    background: #541211;
+    background: #260e00;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cta .btn:hover {
+    background: #551f00;
+  }
+
+  .cta .btn-outline {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 2px solid #260e00;
+    color: #260e00;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cta .btn-outline:hover {
+    background: #260e00;
+    color: white;
   }
 </style>

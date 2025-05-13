@@ -15,7 +15,12 @@ const githubIcon = icon(faSquareGithub);
 
 <Layout>
   <header>
-    <a href="/"><ArrowLeft /> Zpět na úvodní stranu</a>
+    <a href="/" class="back-link">
+      <div>
+        <ArrowLeft />
+      </div>
+      <span>Zpět na seznam projektů</span>
+    </a>
   </header>
   <main>
     <h1>{frontmatter.title}</h1>
@@ -43,8 +48,23 @@ const githubIcon = icon(faSquareGithub);
 <style>
   header {
     width: 60%;
-    margin: 0 auto;
-    padding: 1rem 0;
+    margin: 0.5rem auto;
+  }
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    padding: 1rem 0.75rem;
+    border-radius: 1rem;
+    width: fit-content;
+  }
+
+  .back-link:hover {
+    background-color: rgb(38, 14, 0, 0.2);
   }
 
   main {
@@ -108,12 +128,17 @@ const githubIcon = icon(faSquareGithub);
   }
 
   .content-container :global(h2) {
+    margin: 2rem 0 1rem 0;
+  }
+
+  .content-container :global(h3) {
     margin: 1rem 0;
   }
 
   .content-container :global(p) {
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
   }
 
   .content-container :global(p > img),

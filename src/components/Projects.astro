@@ -11,6 +11,12 @@ library.add(faSquareGithub);
 const githubIcon = icon(faSquareGithub);
 
 const projects = await getCollection("projects");
+
+const sortedProjects = projects.sort((a, b) => {
+  const orderA = a.data.order ?? Infinity; // Treat undefined/null order as last
+  const orderB = b.data.order ?? Infinity; // Treat undefined/null order as last
+  return orderA - orderB;
+});
 ---
 
 <section>
@@ -23,7 +29,7 @@ const projects = await getCollection("projects");
   </div>
 
   {
-    projects.map((p) => (
+    sortedProjects.map((p) => (
       <article>
         <figure>
           <Image
@@ -41,7 +47,10 @@ const projects = await getCollection("projects");
           <p>{p.data.description}</p>
           <div class="project-links">
             <a href={`/projects/${p.id}`} class="repo-link">
-              <ArrowRight /> Zjistit více
+              <div>
+                <ArrowRight />
+              </div>
+              <span>Zjistit více</span>
             </a>
             {p.data.link && (
               <a href={p.data.link} class="repo-link" target="_blank">
@@ -85,7 +94,7 @@ const projects = await getCollection("projects");
   article figure img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: fill; */
     border-radius: 1rem;
   }
 

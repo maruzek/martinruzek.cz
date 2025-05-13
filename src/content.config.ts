@@ -13,6 +13,7 @@ const projects = defineCollection({
       tags: z.array(z.string()),
       image: image(),
       link: z.string(),
+      order: z.number().optional(),
     }),
   // Use the `glob` loader to load all files in the `src/content/projects` directory
   loader: glob({ pattern: ["**/*.md"], base: "src/content/projects" }),

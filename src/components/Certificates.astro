@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+
+import udemyLogo from "../assets/udemy.png";
+import ecdlLogo from "../assets/ecdl.png";
+import ciscoLogo from "../assets/cisco.png";
+---
+
+<section>
+  <h2>Certifikáty a kurzy</h2>
+  <article>
+    <figure>
+      <Image src={udemyLogo} alt="Udemy logo" loading="lazy" />
+    </figure>
+    <div>
+      <h4>Udemy - The Ultimate React Course</h4>
+      <p>
+        Díky tomuto kurzu jsem si rozšířil znalosti v oblasti Reactu a jeho
+        ekosystému.
+      </p>
+    </div>
+  </article>
+  <article>
+    <figure>
+      <Image src={ciscoLogo} alt="ECDL logo" loading="lazy" />
+    </figure>
+    <div>
+      <h4>CISCO IT Essentials</h4>
+      <p>
+        Tento certifikát potvrzuje mé znalosti v oblasti počítačových dovedností
+        a sítí. Získal jsem ho na střední škole.
+      </p>
+    </div>
+  </article>
+  <article>
+    <figure>
+      <Image src={ecdlLogo} alt="ECDL logo" loading="lazy" />
+    </figure>
+    <div>
+      <h4>ECDL</h4>
+      <p>
+        Tento certifikát potvrzuje mé znalosti v oblasti počítačových dovedností
+        a používání kancelářských aplikací. Získal jsem ho na střední škole.
+      </p>
+    </div>
+  </article>
+</section>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 2rem 0;
+    background-color: rgb(250, 248, 238, 0.5);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  h4 {
+    margin: 0.5rem 0;
+  }
+  p {
+    margin: 0.5rem 0;
+  }
+  p strong {
+    font-weight: bold;
+  }
+  p em {
+    font-style: italic;
+  }
+
+  figure img {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    border-radius: 100%;
+  }
+</style>

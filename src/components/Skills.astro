@@ -10,6 +10,7 @@ import {
   faGit,
   faGitlab,
   faFigma,
+  faLinux,
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
@@ -21,7 +22,8 @@ library.add(
   faDocker,
   faGit,
   faGitlab,
-  faFigma
+  faFigma,
+  faLinux
 );
 
 const githubIcon = icon(faGithub);
@@ -33,9 +35,11 @@ const dockerIcon = icon(faDocker);
 const gitIcon = icon(faGit);
 const gitlabIcon = icon(faGitlab);
 const figmaIcon = icon(faFigma);
+const linuxIcon = icon(faLinux);
 
 import twLogo from "../assets/tailwind-css.svg";
 import Image from "astro/components/Image.astro";
+import astroLogo from "../assets/astro-square.svg";
 ---
 
 <section id="stack">
@@ -76,6 +80,11 @@ import Image from "astro/components/Image.astro";
     </div>
 
     <div class="stack-item">
+      <Fragment set:html={linuxIcon.html} />
+      <small>Linux</small>
+    </div>
+
+    <div class="stack-item">
       <Fragment set:html={githubIcon.html} />
       <small>GitHub</small>
     </div>
@@ -88,6 +97,10 @@ import Image from "astro/components/Image.astro";
     <div class="stack-item">
       <Image src={twLogo} alt="Tailwind CSS" />
       <small>Tailwind</small>
+    </div>
+    <div class="stack-item">
+      <Image src={astroLogo} alt="Tailwind CSS" />
+      <small>Astro</small>
     </div>
     <div class="stack-item">
       <Fragment set:html={figmaIcon.html} />
@@ -121,6 +134,10 @@ import Image from "astro/components/Image.astro";
         <strong>Manažerské dovednosti:</strong> Dlouhodobě jsem byl ve vedení spolku
         majícího 200 členů, kde jsem se naučil vést tým a organizovat činnost spolku.
         Půl roku jsem dokonce zastával nejvyšší funkci předsedy.
+      </li>
+      <li>
+        <strong>Project management:</strong> Mám zkušenosti s používa ním nástrojů
+        jako Trello, Notion a Jira pro organizaci projektů a úkolů
       </li>
       <li>
         <strong>Grafika:</strong> Umím pracovat s Adobe Photoshop, Canvou, Figmou

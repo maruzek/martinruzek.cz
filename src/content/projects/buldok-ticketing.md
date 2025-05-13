@@ -2,8 +2,9 @@
 title: "Ticketing systém pro fotbalový klub"
 description: 'Jednoduchý ticketing systém pro místní fotbalový klub, který slouží jako náhrada za "tužku, papír a šatnové bločky". Front end aplikace je napsaná v Reactu a back end v Symfony.'
 image: "../../assets/buldok-admindash.png"
-tags: ["React", "TypeScript", "PHP", "Symfony", "Docker"]
+tags: ["React", "TypeScript", "PHP", "Symfony", "Docker", Tailwind]
 link: "https://github.com/maruzek/buldok-ticketing"
+order: 1
 ---
 
 ## O projektu
@@ -23,19 +24,32 @@ Cílem bylo vytvořit jednoduchý webový nástroj, který by umožnil:
 
 ## Budoucnost
 
-Momentálně projekt prošel prvním testováním a vše zatím naznačuje tomu, že se aplikace od příští sezóny bude používat na všechn zápasech Buldoků. Před plným nasazením od srpna se bude muset doladit několik maličkostí, ale jako koncept aplikace uspěla a byla uvítána jako pozitivní vylepšení fungování klubu
+Momentálně projekt prošel prvním testováním a vše zatím naznačuje tomu, že se aplikace od příští sezóny bude používat na všechn zápasech Buldoků. Před plným nasazením od srpna se bude muset doladit několik maličkostí, ale jako koncept aplikace uspěla a byla uvítána jako pozitivní vylepšení fungování klubu.
 
-## Tech stack
+## Technologie
 
-### Front end
+Front end aplikace je psaná v TypeScriptu a Reactu pomocí Vite. Pro styling aplikace jsem se rozhodl použít Tailwind, který mě už dlouho zajímal, ale poprvé jsem ho použil až u tohoto projektu.
+
+Na backendu běží Symfony API. Se Symfony mám už nějaké zkušenosti a proto to byla jasná volba.
+
+Front end a backend spolu komunikují pomocí REST API. Zabezpečení aplikace zajišťují JWT tokeny s délkou životnosti 2 hodiny. Do budoucna bych chtěl zabezpečení zlepšit pomocí refresh tokenů, ale pro momentální použití aplikace stačí samotné JWT tokens.
+
+Pro vývojové prostředí jsem použil Docker a Docker Compose, který zajišťoval snadný vývoj bez větších starostí.
+
+### Tech stack
+
+#### Front end
 
 - TypeScript,
 - React 19,
+- Tailwind
+- Recharts
+- React Router
 - Vite,
 - ESLint, Prettier,
 - pnpm
 
-### Back end
+#### Back end
 
 - PHP 8.2,
 - Symfony 7,
@@ -44,17 +58,21 @@ Momentálně projekt prošel prvním testováním a vše zatím naznačuje tomu,
 - Composer,
 - Apache
 
-### Security
+#### Security
 
 - JWT (LexikJWT)
 
-### Prostředí
+#### Prostředí
 
 - Docker,
 - Docker Compose,
 - Git,
 - GitHub
 
-### Deploy
+#### Deploy
 
 - Wedos NoLimit hosting
+
+## Databázový diagram
+
+![DB schema](../../assets/buldok-db.png)

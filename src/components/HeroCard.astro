@@ -3,6 +3,9 @@ import { Tooltips } from "astro-tooltips";
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
 import { faSquareEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faSquareGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { Image } from "astro:assets";
+
+import portrait from "../assets/portrait.jpg";
 
 library.add(faSquareGithub, faSquareEnvelope, faLinkedin);
 
@@ -11,42 +14,13 @@ const linkedinIcon = icon(faLinkedin);
 const squareEnvelope = icon(faSquareEnvelope);
 ---
 
-<!-- <header>
-    <div class="logo"><h3>Martin</h3></div>
-    <nav id="main-nav">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header> -->
 <div id="hero">
-  <!-- <div class="img-container"></div>
-  <div class="hero-content">
-    <img src="./test-sq.jpg" alt="" id="hero-portrait" />
-    <h1>test</h1>
-    <div id="links"></div>
-  </div> -->
   <div class="hero-card">
-    <img src="./test-sq.jpg" alt="" id="hero-portrait" />
+    <Image src={portrait} alt="Portrét Martina Růžka" />
 
     <h3>Martin Růžek</h3>
     <p>Student, software&nbsp;engineer, web&nbsp;dev</p>
     <div class="hero-links">
-      <!-- <i
-        class="fa-brands fa-square-github"
-        title="GitHub"
-        data-tooltip-placement="bottom"></i>
-       <i
-        class="fa-solid fa-square-envelope"
-        title="Zkopírovat email do schránky"
-        data-tooltip-placement="bottom"
-        id="email-clipboard"></i> 
-      <i
-        class="fa-brands fa-linkedin"
-        title="LinkedIn"
-        data-tooltip-placement="bottom"></i> -->
       <a href="https://github.com/maruzek" target="_blank">
         <Fragment set:html={githubIcon.html} />
       </a>
@@ -69,7 +43,7 @@ const squareEnvelope = icon(faSquareEnvelope);
     width: 80%;
     padding: 0 2rem;
   }
-  #hero-portrait {
+  .hero-card img {
     width: 100%;
     height: auto;
     margin-bottom: 18px;

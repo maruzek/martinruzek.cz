@@ -5,8 +5,7 @@
   </p>
   <div class="cta">
     <a href="#about" class="btn">Zjistit více</a>
-    <a href="../assets/ruzek-cv.pdf" class="btn-outline" download>Stáhnout CV</a
-    >
+    <a href="../assets/ruzek-cv.pdf" class="btn-outline">Zobrazit CV</a>
   </div>
 </section>
 
@@ -58,5 +57,24 @@
   .cta .btn-outline:hover {
     background: #260e00;
     color: white;
+  }
+
+  @media (max-width: 992px) {
+    section {
+      height: auto; /* Let content define height */
+      min-height: 50vh; /* Or a smaller fixed vh, or use padding */
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      text-align: center; /* Optional: center heading text on mobile */
+    }
+
+    p {
+      font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .cta {
+      justify-content: center;
+      width: 100%;
+    }
   }
 </style>

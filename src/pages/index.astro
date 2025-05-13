@@ -1,4 +1,5 @@
 ---
+import AboutMe from "../components/AboutMe.astro";
 import Certificates from "../components/Certificates.astro";
 import Education from "../components/Education.astro";
 import HeroCard from "../components/HeroCard.astro";
@@ -17,25 +18,7 @@ import Layout from "../layouts/Layout.astro";
       <HeroCard />
       <div id="content">
         <HeroHeading />
-        <section id="about">
-          <h2>O mně</h2>
-          <p>
-            Jsem sudent IT s dlouhodobým zájmem o webový vývoj, který sahá až do
-            roku 2018. Úplně poprvé jsem se k vytváření webových stránek dostal
-            na základní škole. Naplno mě ale webový vývoj začal bavit až na
-            střední škole, kde jsem se naučil základy HTML, CSS a JavaScriptu a
-            PHP. Mimo to jsem se ale naučil např. C#. V maturitním ročníku jsem
-            své znalosti rozšířil o framework Symfony, ve kterém jsem vytvořil
-            svou maturitní práci. V současné době se věnuji především frontendu
-            a Reactu, ale nebojím se objevovat i další technologie.
-          </p>
-          <p>
-            Jsem komunikativní a rád pracuji v týmu. Nemám problém převzít
-            odpovědnost, pokud je to potřeba. Mám zkušenosti s vedením týmu a
-            organizováním projektů, v minulosti jsem totiž vedl spolek s více
-            než 200 členy.
-          </p>
-        </section>
+        <AboutMe />
         <Skills />
         <Projects />
         <Education />
@@ -65,6 +48,50 @@ import Layout from "../layouts/Layout.astro";
         width: 100%;
         /* height: 100vh; */
         margin: 30px 0;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 992px) {
+        main {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          gap: 1rem;
+        }
+
+        .container {
+          padding: 0 1rem;
+        }
+
+        /* Adjust HeroCard for stacked layout */
+        /* You'll also need to adjust styles within HeroCard.astro */
+        /* For example, make its internal #hero position: static or relative, width: 100%, height: auto */
+        /* This is a placeholder for where you'd override HeroCard's specific styles if needed from here, */
+        /* but it's better to make HeroCard itself responsive. */
+        /* For now, we ensure #content takes full width below it. */
+
+        #content {
+          width: 100%; /* Ensure content takes full width when stacked */
+        }
+
+        #content :global(h1, h2, h3, h4, h5, h6) {
+          text-align: center; /* Center headings on smaller screens */
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* Mobile */
+        .container {
+          padding: 0 1rem; /* Adjust padding for mobile */
+        }
+
+        main {
+          width: 100%;
+        }
+
+        #content section {
+          margin: 20px 0; /* Reduce margin for sections on mobile */
+        }
       }
     </style>
   </div>

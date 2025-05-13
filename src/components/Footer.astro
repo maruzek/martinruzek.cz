@@ -1,0 +1,143 @@
+---
+import { Image } from "astro:assets";
+
+import portrait from "../assets/portrait2.jpg";
+
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faSquareEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
+library.add(faGithub, faSquareEnvelope, faLinkedin, faPhone);
+
+const githubIcon = icon(faGithub);
+const linkedinIcon = icon(faLinkedin);
+const squareEnvelope = icon(faSquareEnvelope);
+const phoneIcon = icon(faPhone);
+---
+
+<footer>
+  <div class="footer-card">
+    <figure>
+      <Image
+        src={portrait}
+        alt="Portrét Martina Růžka"
+        width={200}
+        height={200}
+        loading="lazy"
+      />
+    </figure>
+    <div class="footer-card-content">
+      <strong>Martin Růžek</strong>
+      <p>Student, software&nbsp;engineer, web&nbsp;dev</p>
+      <div class="footer-contacts">
+        <div class="footer-contact">
+          <Fragment set:html={phoneIcon.html} />
+          <a href="tel:+420731808342"> +420 731 808 342 </a>
+        </div>
+        <div class="footer-contact">
+          <Fragment set:html={squareEnvelope.html} />
+          <a href="mailto:me@martinruzek.cz"> me@martinruzek.cz </a>
+        </div>
+        <div class="footer-contact">
+          <Fragment set:html={githubIcon.html} />
+          <a href="https://github.com/maruzek" target="_blank"> GitHub </a>
+        </div>
+        <div class="footer-contact">
+          <Fragment set:html={linkedinIcon.html} />
+          <a href="https://linkedin.com/ln/maruzek" target="_blank">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .footer-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: white;
+    border-bottom: #260e00 0.5rem solid;
+    border-radius: 1rem;
+  }
+
+  .footer-card figure {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer-card figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .footer-contacts a {
+    text-decoration: underline;
+    color: #260e00;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+  }
+
+  .footer-contacts a:hover {
+    color: #551f00;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    gap: 0.5rem;
+    line-height: 1;
+  }
+
+  .footer-contact :global(svg.svg-inline--fa) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer-card {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-card figure {
+      width: 80px;
+      height: 80px;
+    }
+
+    .footer-card figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+</style>

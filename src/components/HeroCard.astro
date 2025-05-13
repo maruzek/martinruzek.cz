@@ -1,17 +1,21 @@
 ---
 import { Tooltips } from "astro-tooltips";
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
-import { faSquareEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSquareEnvelope,
+  faArrowDown,
+} from "@fortawesome/free-solid-svg-icons";
 import { faSquareGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { Image } from "astro:assets";
 
 import portrait from "../assets/portrait.jpg";
 
-library.add(faSquareGithub, faSquareEnvelope, faLinkedin);
+library.add(faSquareGithub, faSquareEnvelope, faLinkedin, faArrowDown);
 
 const githubIcon = icon(faSquareGithub);
 const linkedinIcon = icon(faLinkedin);
 const squareEnvelope = icon(faSquareEnvelope);
+const arrowDown = icon(faArrowDown);
 ---
 
 <div id="hero">
@@ -21,20 +25,26 @@ const squareEnvelope = icon(faSquareEnvelope);
     <h3>Martin Růžek</h3>
     <p>Student, software&nbsp;engineer, web&nbsp;dev</p>
     <div class="hero-links">
+      <a href="mailto:me@martinruzek.cz"
+        ><Fragment set:html={squareEnvelope.html} /> me@martinruzek.cz</a
+      >
       <a href="https://github.com/maruzek" target="_blank">
-        <Fragment set:html={githubIcon.html} />
+        <Fragment set:html={githubIcon.html} /> @maruzek
       </a>
-      <div
+      <a href="https://linkedin.com/in/maruzek" target="_blank">
+        <Fragment set:html={linkedinIcon.html} /> @maruzek
+      </a>
+      <!-- <p
         title="Zkopírovat email do schránky"
         data-tooltip-placement="bottom"
         id="email-clipboard"
       >
-        <Fragment set:html={squareEnvelope.html} />
-      </div>
-      <a href="https://linkedin.com/in/maruzek" target="_blank">
-        <Fragment set:html={linkedinIcon.html} />
-      </a>
+        <Fragment set:html={squareEnvelope.html} /> me@martinruzek.cz
+      </p> -->
     </div>
+  </div>
+  <div id="hero-mobile-arrow">
+    <Fragment set:html={arrowDown.html} />
   </div>
 </div>
 
@@ -55,9 +65,14 @@ const squareEnvelope = icon(faSquareEnvelope);
   }
 
   .hero-links {
-    font-size: 2.3rem;
-    margin-top: 5px;
+    margin-top: 1rem;
     display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  h3 {
+    text-align: left;
   }
 
   .hero-links a,
@@ -66,15 +81,18 @@ const squareEnvelope = icon(faSquareEnvelope);
     color: inherit;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    width: fit-content;
   }
 
   .hero-links a:hover {
     color: #551f00;
   }
 
-  .svg-inline--fa {
-    width: 2.3rem;
-    height: 2.3rem;
+  .hero-card :global(svg.svg-inline--fa) {
+    width: 23px;
+    height: 23px;
   }
 
   #hero {
@@ -95,14 +113,57 @@ const squareEnvelope = icon(faSquareEnvelope);
     height: 100%;
     padding: 0 24px;
   }
+
+  #hero-mobile-arrow {
+    display: none;
+  }
+  @media (max-width: 992px) {
+    #hero {
+      position: relative; /* Or relative, depending on needs */
+      width: 100%; /* Or a specific width like 90%, with margin auto */
+      max-width: 500px; /* Optional: constrain width on mobile */
+      height: auto; /* Let content determine height */
+      margin-top: 3rem;
+    }
+
+    .hero-card {
+      width: 100%;
+      padding: 0 1rem; /* Or adjust as needed */
+    }
+
+    #hero-mobile-arrow {
+      display: block;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    #hero-mobile-arrow :global(svg.svg-inline--fa) {
+      width: 5rem;
+      height: 5rem;
+      color: #260e00;
+      margin-top: 1rem;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  }
 </style>
 
-<style is:global>
+<!-- <style is:global>
   .svg-inline--fa {
     width: 2.4rem;
     height: 2.4rem;
   }
-</style>
+</style> -->
 
 <!-- TODO: doplnit potvrzeni zkopirovani do schranky -->
 

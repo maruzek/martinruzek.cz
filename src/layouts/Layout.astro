@@ -3,6 +3,8 @@ import "@fontsource-variable/fraunces";
 import "@fontsource-variable/epilogue";
 import { Tooltips } from "astro-tooltips";
 import { ClientRouter } from "astro:transitions";
+
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -13,10 +15,6 @@ import { ClientRouter } from "astro:transitions";
     <link rel="icon" type="image/ico" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
-    <script
-      src="https://kit.fontawesome.com/868ac28d90.js"
-      crossorigin="anonymous"></script>
-
     <Tooltips interactive={false} delay={[15, 200]} />
     <ClientRouter />
 
@@ -25,14 +23,7 @@ import { ClientRouter } from "astro:transitions";
   <body>
     <div id="background"></div>
     <slot />
-    <footer>
-      <div class="container">
-        <p>
-          &copy; 2025 Martin Růžek. Všechna práva vyhrazena.
-          <br />
-        </p>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>
 
@@ -62,42 +53,6 @@ import { ClientRouter } from "astro:transitions";
       rgb(230, 230, 184) 100%
     );
   }
-
-  /* body {
-    font-family: "Epilogue Variable", sans-serif;
-    font-size: 20px;
-    color: #202020;
-  }
-  p {
-    font-size: 20px;
-  }
-  small {
-    font-size: 16px;
-  }
-  h1 {
-    font-size: 76.29px;
-    font-family: "Fraunces Variable", serif;
-  }
-  h2 {
-    font-size: 61.04px;
-    font-family: "Fraunces Variable", serif;
-  }
-  h3 {
-    font-size: 48.83px;
-    font-family: "Fraunces Variable", serif;
-  }
-  h4 {
-    font-size: 39.06px;
-    font-family: "Fraunces Variable", serif;
-  }
-  h5 {
-    font-size: 31.25px;
-    font-family: "Fraunces Variable", serif;
-  }
-  h6 {
-    font-size: 25px;
-    font-family: "Fraunces Variable", serif;
-  } */
 
   body {
     font-family: "Epilogue Variable", sans-serif;
@@ -148,14 +103,6 @@ import { ClientRouter } from "astro:transitions";
     font-size: 14px;
   }
 
-  footer {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   ul,
   ol {
     list-style-type: none;
@@ -166,6 +113,7 @@ import { ClientRouter } from "astro:transitions";
     position: relative;
     padding-left: 1.75em; /* Make space for the custom icon */
     margin-bottom: 0.65em; /* Spacing between list items */
+    line-height: 1.5;
   }
 
   li::before {

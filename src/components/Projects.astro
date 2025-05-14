@@ -13,8 +13,8 @@ const githubIcon = icon(faSquareGithub);
 const projects = await getCollection("projects");
 
 const sortedProjects = projects.sort((a, b) => {
-  const orderA = a.data.order ?? Infinity; // Treat undefined/null order as last
-  const orderB = b.data.order ?? Infinity; // Treat undefined/null order as last
+  const orderA = a.data.order ?? Infinity;
+  const orderB = b.data.order ?? Infinity;
   return orderA - orderB;
 });
 ---
@@ -94,7 +94,6 @@ const sortedProjects = projects.sort((a, b) => {
   article figure img {
     width: 100%;
     height: 100%;
-    /* object-fit: fill; */
     border-radius: 1rem;
   }
 

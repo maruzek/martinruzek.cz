@@ -34,13 +34,6 @@ const arrowDown = icon(faArrowDown);
       <a href="https://linkedin.com/in/maruzek" target="_blank">
         <Fragment set:html={linkedinIcon.html} /> @maruzek
       </a>
-      <!-- <p
-        title="Zkopírovat email do schránky"
-        data-tooltip-placement="bottom"
-        id="email-clipboard"
-      >
-        <Fragment set:html={squareEnvelope.html} /> me@martinruzek.cz
-      </p> -->
     </div>
   </div>
   <div id="hero-mobile-arrow">
@@ -119,16 +112,16 @@ const arrowDown = icon(faArrowDown);
   }
   @media (max-width: 992px) {
     #hero {
-      position: relative; /* Or relative, depending on needs */
-      width: 100%; /* Or a specific width like 90%, with margin auto */
-      max-width: 500px; /* Optional: constrain width on mobile */
-      height: auto; /* Let content determine height */
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
       margin-top: 3rem;
     }
 
     .hero-card {
       width: 100%;
-      padding: 0 1rem; /* Or adjust as needed */
+      padding: 0 1rem;
     }
 
     #hero-mobile-arrow {
@@ -157,15 +150,6 @@ const arrowDown = icon(faArrowDown);
     }
   }
 </style>
-
-<!-- <style is:global>
-  .svg-inline--fa {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-</style> -->
-
-<!-- TODO: doplnit potvrzeni zkopirovani do schranky -->
 
 <script>
   const emailEl = document.getElementById("email-clipboard");

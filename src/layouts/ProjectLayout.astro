@@ -2,7 +2,6 @@
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 import { Picture, Image } from "astro:assets";
-// import heroImg from "../assets/buldok-admindash.png";
 import { ArrowLeft } from "@lucide/astro";
 
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
@@ -164,37 +163,6 @@ const githubIcon = icon(faSquareGithub);
     box-shadow: 1px 5px 29px 3px rgba(0, 0, 0, 0.49);
     -webkit-box-shadow: 1px 5px 29px 3px rgba(0, 0, 0, 0.49);
     -moz-box-shadow: 1px 5px 29px 3px rgba(0, 0, 0, 0.49);
-  }
-
-  .content-container :global(ul),
-  .content-container :global(ol) {
-    list-style-type: none;
-    margin: 1.25rem 0;
-  }
-
-  .content-container :global(li) {
-    position: relative;
-    padding-left: 1.75em; /* Make space for the custom icon */
-    margin-bottom: 0.65em; /* Spacing between list items */
-  }
-
-  .content-container :global(li::before) {
-    content: ""; /* Required for pseudo-elements with background/mask */
-    display: inline-block;
-    width: 0.9em; /* Adjust size of icon */
-    height: 0.9em; /* Adjust size of icon */
-    background-color: currentColor; /* Icon inherits text color, or set a specific color */
-
-    /* Lucide Chevron Right SVG as a mask */
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    position: absolute;
-    left: 0.25em; /* Position icon to the left */
   }
 
   img {

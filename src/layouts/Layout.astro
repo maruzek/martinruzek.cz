@@ -17,29 +17,24 @@ const siteImage = new URL("./thumbnail.jpg", Astro.site).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="./profile-circle-zoom.png" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{siteTitle}</title>
     <meta name="title" content={siteTitle} />
     <meta name="description" content={siteDescription} />
 
-    {/* SEO & Indexing */}
+    {/* SEO */}
     <link rel="canonical" href={canonicalURL} />
     <meta name="robots" content="index, follow" />
-    {/* Allows search engines to index and follow links */}
     <meta name="author" content="Martin Růžek" />
-    {/* Keywords are less important for SEO now, but can be included */}
     <meta
       name="keywords"
       content="Martin Růžek, portfolio, webový vývojář, student, Astro, JavaScript, PHP, Symfony, React"
     />
 
-    {/* Theme Color for browsers */}
     <meta name="theme-color" content="#faf8ee" />
-    {/* Match your background or primary theme color */}
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
@@ -53,7 +48,6 @@ const siteImage = new URL("./thumbnail.jpg", Astro.site).href;
     <meta property="og:site_name" content="Martin Růžek" />
     <meta property="og:locale" content="cs_CZ" />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta
       property="twitter:url"
@@ -160,19 +154,18 @@ const siteImage = new URL("./thumbnail.jpg", Astro.site).href;
 
   li {
     position: relative;
-    padding-left: 1.75em; /* Make space for the custom icon */
-    margin-bottom: 0.65em; /* Spacing between list items */
+    padding-left: 1.75em;
+    margin-bottom: 0.65em;
     line-height: 1.5;
   }
 
   li::before {
-    content: ""; /* Required for pseudo-elements with background/mask */
+    content: "";
     display: inline-block;
-    width: 0.9em; /* Adjust size of icon */
-    height: 0.9em; /* Adjust size of icon */
-    background-color: currentColor; /* Icon inherits text color, or set a specific color */
+    width: 0.9em;
+    height: 0.9em;
+    background-color: currentColor;
 
-    /* Lucide Chevron Right SVG as a mask */
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
     -webkit-mask-size: contain;
@@ -181,6 +174,6 @@ const siteImage = new URL("./thumbnail.jpg", Astro.site).href;
     mask-repeat: no-repeat;
 
     position: absolute;
-    left: 0.25em; /* Position icon to the left */
+    left: 0.25em;
   }
 </style>

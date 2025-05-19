@@ -58,6 +58,59 @@ const siteImage = new URL("./thumbnail.jpg", Astro.site).href;
     <meta property="twitter:title" content={siteTitle} />
     <meta property="twitter:description" content={siteDescription} />
     <meta property="twitter:image" content={siteImage} />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Martin Růžek",
+        url: canonicalURL,
+        jobTitle: "Webový vývojář",
+        nationality: "Czech",
+        alumniOf: "Vysoká škola Ekonomická v Praze",
+        description:
+          "Jsem student a webový vývojář. Mám zkušenosti s JavaScriptem, PHP a frameworky jako Symfony a React. Vytvářím moderní webové aplikace a stránky.",
+        knowsAbout: [
+          "JavaScript",
+          "TypeScript",
+          "PHP",
+          "Symfony",
+          "React",
+          "Web Development",
+          "Astro",
+          "Docker",
+          "MySQL",
+          "PostgreSQL",
+          "HTML",
+          "CSS",
+          "Sass",
+          "Tailwind CSS",
+          "Figma",
+          "Git",
+          "GitHub",
+          "GitLab",
+        ],
+        image: siteImage,
+        sameAs: [
+          "https://www.linkedin.com/in/maruzek/",
+          "https://github.com/maruzek/",
+          "https://www.instagram.com/martin_ruzek/",
+          "https://www.x.com/maruzek/",
+        ],
+        birthDate: "2002-05-11",
+        birthPlace: {
+          "@type": "Place",
+          name: "Karlovy Vary",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Karlovy Vary",
+            addressCountry: "CZ",
+          },
+        },
+      })}
+    />
+
     <Tooltips interactive={false} delay={[15, 200]} />
     <ClientRouter />
 

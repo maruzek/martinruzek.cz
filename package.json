@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.4",
+    "@astrojs/sitemap": "^3.4.0",
     "@fontsource-variable/epilogue": "^5.2.5",
     "@fontsource-variable/fraunces": "^5.2.5",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",

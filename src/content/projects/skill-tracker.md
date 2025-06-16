@@ -4,7 +4,7 @@ description: "Aplikace umožňující uživateli sledovat jeho pokrok v učení 
 image: "../../assets/skilltracker.png"
 tags: ["JavaScript", "HTML", "CSS"]
 link: "https://github.com/maruzek/skilltracker"
-order: 4
+order: 5
 ---
 
 ## O projektu

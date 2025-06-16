@@ -11,6 +11,7 @@ const projects = defineCollection({
       image: image(),
       link: z.string(),
       order: z.number().optional(),
+      deploy: z.string().optional(),
     }),
   loader: glob({ pattern: ["**/*.md"], base: "src/content/projects" }),
 });

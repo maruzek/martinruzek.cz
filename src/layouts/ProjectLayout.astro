@@ -5,11 +5,13 @@ import { Picture, Image } from "astro:assets";
 import { ArrowLeft } from "@lucide/astro";
 
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faSquareGithub } from "@fortawesome/free-brands-svg-icons";
 
-library.add(faSquareGithub);
+library.add(faSquareGithub, faArrowUpRightFromSquare);
 
 const githubIcon = icon(faSquareGithub);
+const arrowUpRightIcon = icon(faArrowUpRightFromSquare);
 ---
 
 <Layout>
@@ -27,12 +29,24 @@ const githubIcon = icon(faSquareGithub);
     <div class="tags">
       {frontmatter.tags.map((tag: string) => <p class="tag">{tag}</p>)}
     </div>
-    <a href={frontmatter.link} class="repo-link" target="_blank">
-      <div>
-        <Fragment set:html={githubIcon.html} />
-      </div>
-      <span>GitHub</span>
-    </a>
+    <div class="repo-links">
+      <a href={frontmatter.link} class="repo-link" target="_blank">
+        <div>
+          <Fragment set:html={githubIcon.html} />
+        </div>
+        <span>GitHub</span>
+      </a>
+      {
+        frontmatter.deploy && (
+          <a href={frontmatter.deploy} class="repo-link" target="_blank">
+            <div>
+              <Fragment set:html={arrowUpRightIcon.html} />
+            </div>
+            <span>Link</span>
+          </a>
+        )
+      }
+    </div>
     <Image
       src={frontmatter.image}
       alt={frontmatter.title}
@@ -103,6 +117,14 @@ const githubIcon = icon(faSquareGithub);
     color: white;
     text-decoration: none;
     transition: background-color 0.3s ease;
+  }
+
+  .repo-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+    align-self: flex-start;
   }
 
   .repo-link {

@@ -4,7 +4,7 @@ description: "Toto portfolio, které právě vidíte. Potřeboval jsem prostor, 
 image: "../../assets/portfolio.png"
 tags: ["Astro", "HTML", "CSS", TypeScript, JavaScript]
 link: "https://github.com/maruzek/martinruzek.cz"
-order: 3
+order: 4
 ---
 
 ## O projektu
